@@ -1,9 +1,16 @@
 import javax.swing.JOptionPane; //this part allows us to use the pop-up interface
 
 public class RenovationProjectManager {
-
+	
+	int aExample;
+	String bExample; 
+	
+	public RenovationProjectManager(int a, String b) {
+		aExample = a;
+		bExample = b;
+		}
+	
 	public static void main(String[] args) {
-
 		int selection; // selection is what the user inputs when they want to choose a particular
 						// option. The program only accepts integer input.
 		String tempInput; // tempInput and wallNames are both String variables which means they accept
@@ -13,6 +20,10 @@ public class RenovationProjectManager {
 		menu += "1. Calculate paint required for a wall\n"; // menu variable has now been assigned these two lines,
 															// asking the user to choose between either option 1 or 2.
 		menu += "2. Calculate paint required for project";
+		 
+		RenovationProjectManager myExample = new RenovationProjectManager (1, "This is an example of a constructor method");
+		System.out.println(myExample.aExample + ". " +myExample.bExample);
+		
 		tempInput = JOptionPane.showInputDialog(menu); // tempInput is now assigned as whatever the user chooses.
 														// Remember that tempInput was also assigned the String data
 														// type.
@@ -29,8 +40,10 @@ public class RenovationProjectManager {
 				JOptionPane.showMessageDialog(null, "Invalid choice!");
 			}
 			tempInput = JOptionPane.showInputDialog(menu);// run it again
+		
 		}
 	}
+	
 
 	public static void selection1() {
 		double wallArea = 0, cost, height, length, costPerSqm; // wallArea is declared as the data type double, which
@@ -87,7 +100,6 @@ public class RenovationProjectManager {
 		tempInput = JOptionPane.showInputDialog(menu); // tempInput is now assigned as whatever the user chooses.
 		// Remember that tempInput was also assigned the String data
 		// type.
-
 		costPerSqm = Double.parseDouble(JOptionPane.showInputDialog("Enter cost per sq.m ($)")); // asks user to
 		// enter a
 		// cost per
@@ -135,4 +147,12 @@ public class RenovationProjectManager {
 		// walls.
 	}
 
+
+//A constructor in Java is a special method that is used to initialize objects. 
+//The constructor is called when an object of a class is created. It can be used to set initial values for object attributes
+
+
+
+
 }
+
